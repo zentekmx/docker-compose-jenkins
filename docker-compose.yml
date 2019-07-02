@@ -1,0 +1,25 @@
+version: '3'
+
+networks:
+  jk:
+
+volumes:
+  jenkins:
+    driver: local
+
+services:
+
+  jenkins:    
+    user: root
+    environment:
+      GVAUTOS_HOST: "34.66.184.9"
+      #JAVA_OPTS: "-Djenkins.install.runSetupWizard=false"
+    image: jenkinsci/blueocean:latest
+    networks:
+      jk: null
+    ports:
+    - 8080:8080
+    restart: unless-stopped
+    volumes:
+    - /var/run/docker.sock:/var/run/docker.sock
+    - ~/.ssh/id_rsa:/root/.ssh/id_rsa
