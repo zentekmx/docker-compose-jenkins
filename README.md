@@ -1,2 +1,2 @@
 # docker-compose-jenkins
-Docker compose for metabase at https://jenkins.io/projects/blueocean/
+Docker compose for jenkins + blueocean at https://jenkins.io/projects/blueocean/
